@@ -1,6 +1,8 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
-class Product {
+class Produto {
   final String id;
   final String nome;
   final String descricao;
@@ -8,12 +10,12 @@ class Product {
   final String data_cadastro;
   final String imagemUrl;
 
-  const Product({
+  const Produto({
     required this.id,
     required this.nome,
     required this.descricao,
     required this.preco,
     required this.data_cadastro,
     required this.imagemUrl,
-});
+  });
 }

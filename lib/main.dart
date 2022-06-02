@@ -1,5 +1,7 @@
-import 'package:estagio/provider/produts.dart';
-import 'package:estagio/views/product_list.dart';
+import 'package:estagio/provider/produtos.dart';
+import 'package:estagio/routes/app_rotas.dart';
+import 'package:estagio/views/produto_form.dart';
+import 'package:estagio/views/produto_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,17 +15,20 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (ctx) => Produts(),
-        )
+          create: (ctx) => Produtos(),
+          )
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: ProductList(),
+        routes: {
+          AppRotas.HOME: (_) => ProdutoList(),
+          AppRotas.PRODUTO_FROM: (_) => ProdutoForm()
+        },
       ),
     );
   }
 }
+
